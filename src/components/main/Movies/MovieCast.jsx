@@ -1,9 +1,21 @@
 import PeopleList from '../../../components/main/People/PeopleList';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams, withRouter } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import MovieDetails from './MovieDetails';
 
+function withRouter(Component) {
+  function ComponentWithRouterProp(props) {
+    let navigate = useNavigate();
+    let params = useParams();
+    return (
+      <Component
+        {...props}
+        router={{navigate, params}}
+      />
+    );
+  }
+}
 
 const MovieCast = () => {
   const history = useNavigate();
@@ -48,5 +60,5 @@ const MovieCast = () => {
   );
 };
 
-// export default withRouter(MovieCast);
-export default MovieCast;
+export default withRouter(MovieCast);
+// export default MovieCast;

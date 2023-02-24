@@ -1,4 +1,4 @@
-import { setLoading } from '@app/redux/actions/miscActions';
+import { setLoading } from '../../redux/actions/miscActions';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 

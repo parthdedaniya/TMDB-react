@@ -14,7 +14,7 @@ import createSagaMiddleware from 'redux-saga';
 const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers =
-  (import.meta.env.VITE_NODE_ENV !== "prod" &&
+  (process.env.VITE_NODE_ENV !== "prod" &&
     typeof window !== 'undefined' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;

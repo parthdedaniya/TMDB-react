@@ -3,15 +3,17 @@ import { Router, Switch, Route, Routes } from 'react-router-dom';
 import { ToastContainer, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import history from './history';
-import Navigation from './Navigation';
-import ScrollTop from './ScrollTop';
-import ThemeToggler from './ThemeToggler';
-import Footer from './Footer';
+import {createBrowserHistory} from 'history';
+import * as Navigation from './components/common/Navigation';
+import * as ScrollTop from './components/common/ScrollTop';
+import * as ThemeToggler from './components/common/ThemeToggler';
+import * as Footer from './components/common/Footer';
 
 import * as view from './views';
 import * as route from './constants/routes';
-import withProgress from './withProgress';
+import withProgress from './components/hoc/withProgress';
+
+export const history = createBrowserHistory();
 
 const AppRouter = () => {
   return (
